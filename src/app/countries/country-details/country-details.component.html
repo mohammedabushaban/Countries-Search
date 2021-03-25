@@ -1,0 +1,114 @@
+<nav class="navbar navbar-transparent navbar-color-on-scroll fixed-top navbar-expand-lg" color-on-scroll="100"
+  id="sectionsNav">
+  <div class="container">
+    <div class="navbar-translate">
+      <a class="navbar-brand" routerLink="/">Home</a>
+      <button class="navbar-toggler" type="button" data-toggle="collapse" aria-expanded="false"
+        aria-label="Toggle navigation">
+        <span class="sr-only">Toggle navigation</span>
+        <span class="navbar-toggler-icon"></span>
+        <span class="navbar-toggler-icon"></span>
+        <span class="navbar-toggler-icon"></span>
+      </button>
+    </div>
+  </div>
+</nav>
+<div class="page-header header-filter" data-parallax="true" style="background-image:url('{{country[0]?.flag }}');">
+</div>
+<div class="main main-raised">
+  <div class="profile-content">
+    <div class="container">
+      <div class="row">
+        <div class="col-md-12 ml-auto mr-auto">
+          <div class="profile">
+            <div class="avatar">
+              <img src="{{country[0].flag }}" alt="Circle Image" class="img-raised rounded-circle img-fluid">
+            </div>
+            <div class="name">
+              <h3 class="title">{{country[0].name }}</h3>
+              <h4> Capital : {{country[0].capital}}  </h4>
+            </div>
+          </div>
+
+        </div>
+      </div>
+      <div class="description text-center">
+        <h4> Name : {{country[0]?.nativeName }}</h4>
+      </div>
+      <div class="row">
+        <div class="col-md-12 ml-auto mr-auto">
+          <div class="profile-tabs">
+            <ul class="nav nav-pills nav-pills-icons justify-content-center" role="tablist">
+              <li class="nav-item">
+                <a class="nav-link active" href="#perm_identity" role="tab" data-toggle="tab">
+                  <i class="material-icons">perm_identity</i> Population
+                  <b>{{country[0].population | number }} Person</b>
+                </a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link active" href="#studio" role="tab" data-toggle="tab">
+                  <i class="material-icons">camera</i> Area
+                  <b><span class="small text-gray"></span> {{country[0].area | number}} Km<sup>2</sup></b>
+                </a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link active" href="#language" role="tab" data-toggle="tab">
+                  <i class="material-icons">language</i> Region
+                  <b><span class="small text-gray"></span> {{country[0].region}}</b>
+                </a>
+              </li>
+              <li class="nav-item">
+                <div class="nav-link active" href="#local_phone" role="tab" data-toggle="tab">
+                  <i class="material-icons">local_phone</i> Calling Code
+                  <b><span class="small text-gray"></span> {{country[0].callingCodes[0]}}</b>
+                </div>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </div>
+      <div class="tab-content tab-space">
+        <div class="tab-pane work active show" id="work">
+          <div class="row">
+            <div class="col-md-7 ml-auto mr-auto ">
+              <h4 class="title">Timezones : {{country[0].timezones}}</h4>
+              <div class="row collections">
+              </div>
+            </div>
+
+            <div class="col-md-2 mr-auto ml-auto stats">
+              <hr>
+              <h4 class="title">Currencies</h4>
+              <ul class="list-unstyled">
+                <li><b>Code : </b>{{country[0].currencies[0].code}}</li>
+                <li><b>Name : </b>{{country[0].currencies[0].name}}</li>
+                <li><b>Symbol : </b><span style="font-size: 30px">{{country[0].currencies[0].symbol}}</span></li>
+              </ul>
+              <hr>
+              <h4 class="title">Latlng</h4>
+              <span class="badge badge-rose" style="font-size: 20px;">{{country[0].latlng[1]}}</span> |
+              <span class="badge badge-primary" style="font-size: 20px;">{{country[0].latlng[0]}}</span>
+            </div>
+
+            <div class="col-md-2 mr-auto ml-auto stats">
+              <hr>
+              <h4 class="title">Languages</h4>
+              <ul class="list-unstyled">
+                <li><b>iso639_1 : </b>{{country[0].languages[0].iso639_1}}</li>
+                <li><b>iso639_2 : </b>{{country[0].languages[0].iso639_2}}</li>
+                <li><b>name : </b>{{country[0].languages[0].name}}</li>
+                <li><b>nativeName : </b>{{country[0].languages[0].nativeName}}</li>
+              </ul>
+              <hr>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<footer class="footer text-center">
+  <p>Made with <a href="https://www.creative-tim.com/product/material-kit/?partner=101249" target="_blank">Material
+      Kit</a> by Creative Tim</p>
+</footer>

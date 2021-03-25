@@ -1,0 +1,8 @@
+<h1 class="text-center">All Countries</h1>
+<app-filter-textbox></app-filter-textbox>
+<div class="row">
+  <ng-container class="col" *ngFor="let country of countries$ | async">
+    <div class="col">
+      <app-country-card [country]="country"></app-country-card>
+    </div>
+  </ng-container>

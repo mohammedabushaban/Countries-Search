@@ -1,0 +1,30 @@
+
+
+    <div class="spinner-border" role="status" *ngIf="!country">
+      <span class="sr-only"></span>
+    </div>
+
+    <div class="row">
+      <div class="mb-4">
+        <div class="spinner-border" role="status" *ngIf="!country">
+          <span class="sr-only"></span>
+        </div>
+        <a routerLink="/country-details/{{country.name}}" >
+        <div class="bg-white rounded-lg p-3 shadow">
+          <h2 class="h6 font-weight-bold text-center mb-2">{{country.name}}</h2>
+          <!-- Progress bar 1 -->
+          <img class="card-img-top" src="{{country.flag}}" alt="Card image cap">
+          <!-- END -->
+          <!-- Demo info -->
+          <div class="row  mt-4 ">
+            <div class="border-right" dir="rtl">
+              <div class="population ">{{country.population | number}} :   <span class="small text-gray">نسمة </span> </div>
+              <div class="number"><span class="small text-gray">المساحة : </span> {{country.area | number}}   كم<sup>2</sup> </div>
+            </div>
+          <label>{{country.capital}}</label>
+          </div>
+          <!-- END -->
+        </div>
+      </a>
+      </div>
+    </div>

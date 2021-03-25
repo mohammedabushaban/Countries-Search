@@ -1,0 +1,15 @@
+<!-- <div class="input-group">
+  <div class="form-outline">
+    <input type="search" id="form1" class="form-control" />
+    <label class="form-label" for="form1">Search</label>
+  </div>
+  <button type="button" class="btn btn-primary">
+    <i class="fas fa-search"></i>
+  </button>
+</div> -->
+
+
+<label for="exampleDataList" class="form-label"  style="color: aliceblue;">Search of country</label>
+<form>
+  <input class="form-control" name="filter" [(ngModel)]="searchInput" (keyup)="filterChanged($event)" list="datalistOptions" id="exampleDataList" placeholder="Type to search...">
+</form>
