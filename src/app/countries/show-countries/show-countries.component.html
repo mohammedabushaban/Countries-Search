@@ -1,8 +1,18 @@
 <h1 class="text-center">All Countries</h1>
-<app-filter-textbox></app-filter-textbox>
+<app-filter-textbox (onSearch)="filterCountries($event)"></app-filter-textbox>
 <div class="row">
-  <ng-container class="col" *ngFor="let country of countries$ | async">
-    <div class="col">
-      <app-country-card [country]="country"></app-country-card>
-    </div>
+  <ng-container *ngIf="countries$ | withLoader | async as result">
+    <ng-container *ngIf="!result.isLoading">
+      <ng-container
+        class="col"
+        *ngFor="let country of result.data | filter: searchText:key"
+      >
+        <div class="col">
+          <app-country-card [country]="country"></app-country-card>
+        </div>
+      </ng-container>
+    </ng-container>
+    <app-loader *ngIf="result.isLoading"></app-loader>
+    <p *ngIf="!result.isLoading && result.err">{{ result.err }}</p>
   </ng-container>
+</div>

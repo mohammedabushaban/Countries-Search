@@ -8,8 +8,16 @@
   </button>
 </div> -->
 
-
-<label for="exampleDataList" class="form-label"  style="color: aliceblue;">Search of country</label>
+<label for="exampleDataList" class="form-label" style="color: aliceblue"
+  >Search of country</label
+>
 <form>
-  <input class="form-control" name="filter" [(ngModel)]="searchInput" (keyup)="filterChanged($event)" list="datalistOptions" id="exampleDataList" placeholder="Type to search...">
+  <input
+    class="form-control"
+    name="filter"
+    (keyup)="filterChanged($event)"
+    list="datalistOptions"
+    id="exampleDataList"
+    placeholder="Type to search..."
+  />
 </form>
