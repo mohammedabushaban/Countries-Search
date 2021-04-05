@@ -1,4 +1,4 @@
-<h1 class="text-center">All Countries</h1>
+<h1 class="text-center">{{ "Home.welcome" | translate: { name: "israa" } }}</h1>
 <app-filter-textbox (onSearch)="filterCountries($event)"></app-filter-textbox>
 <div class="row">
   <ng-container *ngIf="countries$ | withLoader | async as result">

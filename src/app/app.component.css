@@ -1,0 +1,6 @@
+main {
+  display: ltr;
+}
+main.ar-dir {
+  direction: rtl;
+}

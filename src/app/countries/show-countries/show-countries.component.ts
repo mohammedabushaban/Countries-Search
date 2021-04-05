@@ -1,3 +1,4 @@
+import { TranslateService } from "@ngx-translate/core";
 import { Observable } from "rxjs";
 import { Component, OnInit } from "@angular/core";
 import { ICountry } from "src/app/shared/interfaces";
@@ -14,10 +15,17 @@ export class ShowCountriesComponent implements OnInit {
   searchText: string;
   key = "name";
 
-  constructor(private countryService: ContryService) {}
+  constructor(
+    private countryService: ContryService,
+    private translate: TranslateService
+  ) {}
 
   ngOnInit(): void {
     this.countries$ = this.countryService.countries();
+
+    this.translate.get("Home.welcome", { name: "israa" }).subscribe((text) => {
+      console.log(text, "text");
+    });
   }
 
   // applyFilter(filterValue: string) {
