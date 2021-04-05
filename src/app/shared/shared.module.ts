@@ -1,3 +1,4 @@
+import { TranslateModule } from "@ngx-translate/core";
 import { FilterPipe } from "./pipes/filter.pipe";
 import { NgModule } from "@angular/core";
 import { CommonModule } from "@angular/common";
@@ -25,6 +26,7 @@ import { WithLoaderPipe } from "./pipes/with-loader.pipe";
     FormsModule,
     SharedRoutingModule,
     RouterModule.forChild([]),
+    TranslateModule,
   ],
   exports: [
     ContainerComponent,
@@ -33,6 +35,7 @@ import { WithLoaderPipe } from "./pipes/with-loader.pipe";
     FilterTextboxComponent,
     LoaderComponent,
     WithLoaderPipe,
+    TranslateModule,
   ],
 })
 export class SharedModule {}

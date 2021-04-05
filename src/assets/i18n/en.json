@@ -1,0 +1,7 @@
+{
+    "Nav": {},
+    "Home": {
+        "allCountries": "All Countries",
+        "welcome": "hello {{name}}"
+    }
+}

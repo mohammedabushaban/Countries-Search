@@ -1,2 +1,12 @@
+<main [class.ar-dir]="currentLang === 'ar'">
+  <header>
+    <ul>
+      <li (click)="onLangChange(lang)" *ngFor="let lang of allLangs">
+        {{ lang }}
+      </li>
+    </ul>
 
-<router-outlet></router-outlet>
+    {{ currentLang }} , 'hhh'
+  </header>
+  <router-outlet></router-outlet>
+</main>
